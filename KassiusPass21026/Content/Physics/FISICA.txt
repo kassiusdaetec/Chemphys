@@ -1,0 +1,102 @@
+FISICA/
+│
+├── 1_ANO_MECANICA/
+│   │
+│   ├── 01_INTRODUCAO/
+│   │   ├── 01.1_GRANDEZAS_FISICAS/
+│   │   ├── 01.2_SISTEMA_INTERNACIONAL_DE_UNIDADES/
+│   │   ├── 01.3_NOTACAO_CIENTIFICA/
+│   │   ├── 01.4_CONVERSAO_DE_UNIDADES/
+│   │   ├── 01.5_ALGARISMOS_SIGNIFICATIVOS/
+│   │   └── 01.6_VETORES/
+│   │
+│   ├── 02_CINEMATICA/
+│   │   ├── 02.1_REFERENCIAL/
+│   │   ├── 02.2_POSICAO_E_DESLOCAMENTO/
+│   │   ├── 02.3_VELOCIDADE/
+│   │   │   └── 02.3.1_VELOCIDADE_MEDIA/
+│   │   │
+│   │   ├── 02.4_MOVIMENTO_UNIFORME/
+│   │   │   └── 02.4.1_GRAFICOS_POSICAO_TEMPO/
+│   │   │
+│   │   ├── 02.5_MOVIMENTO_UNIFORMEMENTE_VARIADO/
+│   │   │   ├── 02.5.1_ACELERACAO/
+│   │   │   └── 02.5.2_GRAFICOS_VELOCIDADE_TEMPO/
+│   │   │
+│   │   ├── 02.6_QUEDA_LIVRE/
+│   │   ├── 02.7_LANCAMENTO_VERTICAL/
+│   │   └── 02.8_LANCAMENTO_HORIZONTAL_E_OBLIQUO/
+│   │
+│   ├── 03_DINAMICA/
+│   │   ├── 03.1_FORCA/
+│   │   ├── 03.2_LEIS_DE_NEWTON/
+│   │   ├── 03.3_PESO/
+│   │   ├── 03.4_NORMAL/
+│   │   ├── 03.5_TRACAO/
+│   │   ├── 03.6_FORCA_DE_ATRITO/
+│   │   ├── 03.7_FORCA_ELASTICA/
+│   │   └── 03.8_DIAGRAMAS_DE_FORCAS/
+│   │
+│   └── 04_TRABALHO_E_ENERGIA/
+│       ├── 04.1_TRABALHO_DE_UMA_FORCA/
+│       ├── 04.2_POTENCIA/
+│       ├── 04.3_ENERGIA_CINETICA/
+│       ├── 04.4_ENERGIA_POTENCIAL_GRAVITACIONAL/
+│       ├── 04.5_ENERGIA_POTENCIAL_ELASTICA/
+│       └── 04.6_CONSERVACAO_DA_ENERGIA_MECANICA/
+│
+└── 2_ANO_OUTROS_FENOMENOS/
+    │
+    ├── 01_QUANTIDADE_DE_MOVIMENTO/
+    │   ├── 01.1_MOMENTO_LINEAR/
+    │   ├── 01.2_IMPULSO/
+    │   ├── 01.3_CONSERVACAO_DA_QUANTIDADE_DE_MOVIMENTO/
+    │   └── 01.4_COLISOES/
+    │
+    ├── 02_GRAVITACAO/
+    │   ├── 02.1_LEI_DA_GRAVITACAO_UNIVERSAL/
+    │   ├── 02.2_CAMPO_GRAVITACIONAL/
+    │   ├── 02.3_MOVIMENTO_ORBITAL/
+    │   └── 02.4_LEIS_DE_KEPLER/
+    │
+    ├── 03_ESTATICA_E_HIDROSTATICA/
+    │   ├── 03.1_EQUILIBRIO/
+    │   ├── 03.2_TORQUE_MOMENTO_DE_UMA_FORCA/
+    │   ├── 03.3_PRESSAO/
+    │   ├── 03.4_DENSIDADE/
+    │   ├── 03.5_MASSA_ESPECIFICA/
+    │   ├── 03.6_PRESSAO_ATMOSFERICA/
+    │   ├── 03.7_PRINCIPIO_DE_PASCAL/
+    │   ├── 03.8_PRINCIPIO_DE_ARQUIMEDES/
+    │   └── 03.9_EMPUXO/
+    │
+    ├── 04_TERMOLOGIA/
+    │   ├── 04.1_TEMPERATURA/
+    │   ├── 04.2_ESCALAS_DE_TEMPERATURA/
+    │   ├── 04.3_DILATACAO_TERMICA/
+    │   ├── 04.4_CALOR/
+    │   ├── 04.5_CALOR_ESPECIFICO/
+    │   ├── 04.6_CAPACIDADE_TERMICA/
+    │   ├── 04.7_CALOR_LATENTE/
+    │   ├── 04.8_MUDANCAS_DE_ESTADO/
+    │   └── 04.9_PROPAGACAO_DO_CALOR/
+    │
+    ├── 05_TERMODINAMICA/
+    │   ├── 05.1_GASES/
+    │   ├── 05.2_TRANSFORMACOES_GASOSAS/
+    │   ├── 05.3_TRABALHO_DE_UM_GAS/
+    │   ├── 05.4_PRIMEIRA_LEI_DA_TERMODINAMICA/
+    │   ├── 05.5_MAQUINAS_TERMICAS/
+    │   └── 05.6_RENDIMENTO/
+    │
+    └── 06_ONDULATORIA/
+        ├── 06.1_ONDAS/
+        ├── 06.2_FREQUENCIA/
+        ├── 06.3_PERIODO/
+        ├── 06.4_COMPRIMENTO_DE_ONDA/
+        ├── 06.5_VELOCIDADE_DE_PROPAGACAO/
+        ├── 06.6_REFLEXAO/
+        ├── 06.7_REFRAÇÃO/
+        ├── 06.8_DIFRACAO/
+        ├── 06.9_INTERFERENCIA/
+        └── 06.10_SOM/
