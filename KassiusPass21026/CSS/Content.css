@@ -10,9 +10,10 @@ body{
 /*Menu*/
 
 .menu{
-    height: 725px;
     width: 200px;
     background-color: #00021a;
+    display: flex;
+    flex-direction: column;
 }
 
 .selection{
@@ -50,10 +51,113 @@ h3{
 
 .exect{
     margin: 10px;
-    margin-top: 230px;
+    margin-top: auto;
     padding: 10px;
     color: white;
     border-radius: 5px;
     background-color: #28285e;
     border: gray solid 2px;
+}
+
+/*Content*/
+
+.carrossel{
+    display: flex;
+    flex-direction: row;
+    width: 1170px;
+    height: 500px;
+    margin-left: 20px;
+    overflow: hidden;
+}
+
+.carrossel img{
+    width: 1170px;
+    height: 500px;
+    animation: carrossel 24s infinite ease-in-out;
+}
+
+@keyframes carrossel{
+    0%, 20% {transform: translateX(0);}
+
+    25%, 45% {transform: translateX(-100%);}
+
+    50%, 70% {transform: translateX(-200%);}
+
+    75%, 95% {transform: translateX(-300%);}
+  
+    100% {transform: translateX(0);}
+}
+
+.cards{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    background-color: #d8d8d8;
+    width: 200px;
+    height: 280px;
+    border-radius: 5px;
+    margin: 20px;
+}
+
+.card img{
+    width: 190px;
+    margin: 5px;
+    margin-top: 10px;
+}
+
+.card p{
+    margin: 30px;
+    text-align: center;
+}
+
+.card a{
+    position: absolute;
+    text-decoration: none;
+    color: white;
+    padding: 5px 20px;
+    background-color: #00021a;
+    border-radius: 50px;
+    margin: 10px;
+    margin-top: 240px;
+}
+
+.card:hover{
+    transform: translate(-3px, -3px);
+    transition: 0.6s;
+    box-shadow: gray 3px 3px 5px;
+}
+
+.mat{
+    background-color: #ececec;
+    margin: 20px;
+    margin-top: 10px;
+}
+
+.title{
+    font-size: 30px;
+    padding-right: 130vh;
+    list-style: none;
+    cursor: pointer;
+}
+
+.seta {
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.mat[open] .seta {
+    transform: rotate(90deg);
+}
+
+
+.subtitle{
+    font-size: 20px;
+    padding-right: 110vh;
+    list-style: none;
+    cursor: pointer;
 }
