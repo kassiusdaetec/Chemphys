@@ -166,82 +166,35 @@ h3{
 
 
 .subtitle{
+    margin-left: 20px;
     font-size: 20px;
     padding-right: 110vh;
     list-style: none;
     cursor: pointer;
 }
 
-/*dashboard*/
-.progressBar{
-    width: 1000px;
-    color: #00021a;
-    border: solid #28285e 1px;
-    border-radius: 5px;
-    margin-bottom: 20px;
+.yearseta{
+    display: inline-block;
+    transition: transform 0.2s ease;
 }
 
-.progressBar p{
-    margin: 10px;
+.submat[open] .yearseta{
+    transform: rotate(90deg);
 }
 
-.bar{
-    border-radius: 5px;
-    height: 10px;
-    margin: 15px;
-    margin-left: 10px;
-    border: solid #00021a 2px;
+.subsub{
+    margin-left: 40px;
+    font-size: 15px;
+    padding-right: 110vh;
+    list-style: none;
+    cursor: pointer;
 }
 
-.progress{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+.matseta{
+    display: inline-block;
+    transition: transform 0.2s ease;
 }
 
-.pg, .ex, .tpu{
-    border-radius: 5px;
-    margin: 3px;
-    height: 150px;
-    border: solid #00021a 2px;
-    justify-items: center;
-    align-content: center; 
-    position: relative;
-}
-
-.t{
-    position: absolute;
-    top: 2px;
-    left: 8px;
-    font-size: 12px;
-    color: #00021a;
-}
-
-.calendar {
-    margin-top: 20px;
-    width: 997px;
-    border: 1px solid #ddd;
-    box-shadow: 0 0px 8px #0000001a;
-}
-
-.head {
-    width: 997px;
-    border: 1px solid #ddd;
-    box-shadow: 0 0px 8px #0000001a;
-}
-
-.Weekday {
-    
-    width: 997px;
-    border: 1px solid #ddd;
-    box-shadow: 0 0px 8px #0000001a;
-}
-
-.day{
-    font-weight: normal;
-    border: 1px solid #706f6f;
-    height: 60px;
-}
-
-.past {
-    color: #706f6f;
+.minmat[open] .matseta{
+    transform: rotate(90deg);
 }
