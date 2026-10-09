@@ -198,3 +198,191 @@ h3{
 .minmat[open] .matseta{
     transform: rotate(90deg);
 }
+
+/*dashboard*/
+
+.progressBar{
+    width: 1000px;
+    color: #00021a;
+    border: solid #28285e 1px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.progressBar p{
+    margin: 10px;
+}
+
+.bar{
+    border-radius: 5px;
+    height: 10px;
+    margin: 15px;
+    margin-left: 10px;
+    border: solid #00021a 2px;
+}
+
+.progress{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.pg, .ex, .tpu{
+    border-radius: 5px;
+    margin: 3px;
+    height: 150px;
+    border: solid #00021a 2px;
+    justify-items: center;
+    align-content: center; 
+    position: relative;
+}
+
+.t{
+    position: absolute;
+    top: 2px;
+    left: 8px;
+    font-size: 12px;
+    color: #00021a;
+}
+
+.calendar {
+    margin-top: 20px;
+    width: 997px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0px 8px #0000001a;
+}
+
+.head {
+    width: 997px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0px 8px #0000001a;
+}
+
+.Weekday {
+    
+    width: 997px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0px 8px #0000001a;
+}
+
+.day{
+    font-weight: normal;
+    border: 1px solid #706f6f;
+    height: 60px;
+}
+
+.past {
+    color: #706f6f;
+}
+
+@media screen and (max-width: 700px) {
+    
+    .body {
+        flex-direction: column;
+    }
+
+    .menu {
+        width: 100%;
+        height: 260px;
+        padding: 15px;
+    }
+
+    .selection {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-left: -1%;
+    }
+
+    .select {
+        border: 1px solid #0783a8;
+        padding: 6px 12px;
+        border-radius: 5px;
+        font-size: 10px;
+        height: 1rem;
+    }
+
+    .exect{
+        margin-top: 4%;
+    }
+
+    .content {
+        padding: 15px;
+        gap: 20px;
+        margin-left: -3vw;
+    }
+
+    .progressBar{
+        margin-left: 0%;
+        width: 92vw;
+    }
+    .progress{
+        width: 93vw;
+    }
+
+    .calendar{
+        width: 93vw;
+    }
+    .head{
+        width: 93vw;
+        height: 170px;
+    }
+    .calendar th, .calendar td {
+        padding: 6px;
+        font-size: 13px;
+        
+    }
+}
+
+@media (min-width:700px )and (max-width:870px){
+input{
+    width: 70%;
+    margin-left: 5%;
+}
+.progressBar{
+   margin-left: -5%;
+   width: 76vw;
+}
+.progress{
+    margin-left: -5%;
+    width: 76vw;
+}
+.head{
+    width: 76vw;
+}
+.calendar{
+    margin-left: -5%;
+    width: 76vw;
+}
+
+}
+
+@media (min-width:870px ) and (max-width:1100px) {
+
+.progressBar{
+   width: 63vw;
+}
+.progress{
+    width: 63vw;
+}
+.calendar{
+    width: 63vw;
+}
+.head{
+    width: 63vw;
+}
+}
+@media (min-width:1100px) and (max-width:1300px) {
+
+.progressBar{
+   width: 74vw;
+}
+.progress{
+    width: 74vw;
+}
+.calendar{
+    width: 74vw;
+}
+.head{
+    width: 74vw;
+}
+}
