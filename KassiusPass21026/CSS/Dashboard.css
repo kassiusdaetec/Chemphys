@@ -10,9 +10,14 @@ body{
 /*Menu*/
 
 .menu{
-    height: 725px;
     width: 200px;
+    height: 95vh;
+    position:fixed;
+    top: 10px;
+    left:10px;
     background-color: #00021a;
+    display: flex;
+    flex-direction: column;
 }
 
 .selection{
@@ -62,7 +67,7 @@ h3{
 
 .content{
     margin: 20px;
-    margin-left: 70px;
+    margin-left: 250px;
 }
 
 .progressBar{
