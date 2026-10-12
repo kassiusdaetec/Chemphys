@@ -21,7 +21,7 @@ h1{
     gap: 48px;
 }
 form{
-    height: 67%;
+    height: 70vh;
     background-color: #00021a;
     width: 40%;
     border-radius: 17px;
@@ -30,6 +30,14 @@ input{
     width: 30%;
     border: 2px solid black;
     border-radius: 9px;
+}
+.criar{
+    margin: 10px;
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+    background-color: #28285e;
+    text-decoration: none;
 }
 .esqc{
     display: flex;
@@ -40,7 +48,7 @@ input{
 }
 
 .env{
-    background-color: #0783a8;
+    background: linear-gradient(to right,#28285e,#0663ce);
     height: 30px;
 }
 
