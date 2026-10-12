@@ -125,6 +125,10 @@ h3{
     text-align: center;
 }
 
+.max p{
+    margin-top: 10px;
+}
+
 .card a{
     position: absolute;
     text-decoration: none;
