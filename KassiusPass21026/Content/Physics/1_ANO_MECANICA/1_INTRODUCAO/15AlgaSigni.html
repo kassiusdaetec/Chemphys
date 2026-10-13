@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5-Algarismos Significativos</title>
+    <link rel="stylesheet" href="../../../CSS/ContentMat.css">
+</head>
+
+<body>
+    <div class="body">
+        <div class="menu">
+            <h3>Chemphys
+                <hr>
+            </h3>
+            <input type="text" placeholder="🔍︎ Pesquisar">
+            <div class="selection">
+                <a href="../../../../Dashboard.html" class="select">Dashboard</a>
+                <a href="../../../../Content.html" class="select">Conteúdo</a>
+                <a href="../../../../Calculator.html" class="select">Calculadoras</a>
+                <a href="../../../../Course.html" class="select">Trilhas</a>
+                <a href="../../../../Historic.html" class="select">Histórico</a>
+                <a href="../../../../Favorites.html" class="select">FAVORITOS</a>
+            </div>
+            <p class="exect">⏻ Sair</p>
+        </div>
+        <div class="content">
+            <div class="first">
+                <img src="../../../../Images/AlgarismosSignificativos.png">
+                <div class="firstText">
+                    <h1>Algarismos Significativos</h1>
+                    <p>Algarismos significativos são os dígitos de uma medição que realmente expressam a precisão de um
+                        valor medido. Eles são compostos por todos os algarismos corretos (aqueles dos quais temos
+                        certeza absoluta através do instrumento de medição) mais o último algarismo duvidoso (que
+                        carrega uma incerteza ou estimativa).</p>
+                </div>
+            </div>
+            <h2>Regras para Identificação:</h2>
+            <p>Para saber quantos algarismos significativos um número possui, siga estes critérios práticos:</p>
+            <ol>
+                <li>
+                    <b>Dígitos de 1 a 9:</b> São sempre significativos.
+                    <ul>
+                        <li><em>Exemplo:</em> 24,3 possui 3 algarismos significativos.</li>
+                    </ul>
+                </li><br>
+                <li>
+                    <b>Zeros entre números:</b> São sempre significativos.
+                    <ul>
+                        <li><em>Exemplo:</em> 407 possui 3 algarismos significativos.</li>
+                    </ul>
+                </li><br>
+                <li>
+                    <b>Zeros à esquerda:</b> Nunca são significativos. Eles servem apenas para indicar a
+                    posição da vírgula.
+                    <ul>
+                        <li><em>Exemplo:</em> 0,0025 possui apenas 2 algarismos significativos (o 2 e o 5).</li>
+                    </ul>
+                </li><br>
+                <li>
+                    <b>Zeros à direita (com vírgula):</b> São sempre significativos, pois indicam a precisão
+                    da escala utilizada.
+                    <ul>
+                        <li><em>Exemplo:</em> 12,00 possui 4 algarismos significativos.</li>
+                    </ul>
+                </li><br>
+            </ol>
+            <h2>Operações Matemáticas</h2>
+            <p>Ao realizar cálculos, o resultado final não pode parecer mais preciso do que a medida menos precisa que você utilizou. Siga estas regras:</p>
+            <ul>
+                <li>
+                    <b>Soma e Subtração:</b> O resultado deve manter o mesmo número de casas decimais que a parcela com a menor precisão decimal.
+                    <ul>
+                        <li><em>Exemplo:</em> 12,56 (2 casas) + 0,1236 (4 casas) = 12,6836 &rarr; <b>12,68</b> (arredondado para 2 casas decimais).</li>
+                    </ul>
+                </li><br>
+                <li>
+                    <b>Multiplicação e Divisão:</b> O resultado deve conter a mesma quantidade total de algarismos significativos que o fator que tiver o menor número deles.
+                    <ul>
+                        <li><em>Exemplo:</em> 2,5 (2 sigs) &times; 1,25 (3 sigs) = 3,125 &rarr; <b>3,1</b> (arredondado para 2 algarismos significativos).</li>
+                    </ul>
+                </li><br>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
