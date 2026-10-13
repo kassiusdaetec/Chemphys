@@ -435,3 +435,7 @@ input{
     display: flex;
     flex-direction: row;
 }
+/* Automatically grab the href attribute value and display it as text */
+a.exurl::after {
+  content: attr(href);
+}
