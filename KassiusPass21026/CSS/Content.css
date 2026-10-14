@@ -198,3 +198,9 @@ h3{
 .minmat[open] .matseta{
     transform: rotate(90deg);
 }
+
+.substimg{
+    display: flex;
+    position:absolute;
+    right: 0;
+}
