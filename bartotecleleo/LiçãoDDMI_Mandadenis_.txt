@@ -1,0 +1,73 @@
+import { StyleSheet, Text, View, Button } from 'react-native';
+import { useState } from 'react';
+
+export default function App() {
+  const [ cliquesA, atualizarCliquesA ] = useState(0);
+  const [ cliquesB, atualizarCliquesB ] = useState(0);
+
+  return (
+    <View style={styles.box}>
+    <View style={styles.box2}>
+      <View style={styles.containerA}>
+      <Text style={styles.paragraph}>Clique A</Text>
+      <Text style={styles.paragraph}>{cliquesA}</Text>
+        <View style={styles.row}>
+        <Button style={styles.button} title="+" onPress={() => {atualizarCliquesA(cliquesA +1)}}/>
+        <Button style={styles.button} title="0" onPress={() => {atualizarCliquesA(0)}}/>
+        <Button style={styles.button} title="-" onPress={() => {atualizarCliquesA(cliquesA -1)}}/>
+        </View>
+      </View>
+      <View style={styles.containerB}>
+        <Text style={styles.paragraph}>Clique B</Text>
+        <Text style={styles.paragraph}>{cliquesB}</Text>
+        <View style={styles.row}>
+          <Button style={styles.button} title="+" onPress={() => {atualizarCliquesB(cliquesB +1)}}/>
+          <Button style={styles.button} title="0" onPress={() => {atualizarCliquesB(0)}}/>
+          <Button style={styles.button} title="-" onPress={() => {atualizarCliquesB(cliquesB -1)}}/>
+        </View>
+      </View>
+    </View>
+    <View style={styles.button}>
+        <Button style={styles.button0} title="Zerar" onPress={() => {atualizarCliquesB(0),atualizarCliquesA(0)}}/>
+      </View>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  box:{
+    justifyContent: 'center',
+  },
+  box2:{
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  containerA: {
+    display: 'flex',
+    flex: 1,
+    alignItems: 'center',
+    padding: 8,
+  },
+  row: {
+    display: 'flex',
+    flexDirection: 'row',
+  },
+  containerB: {
+    display: 'flex',
+    flex: 1,
+    alignItems: 'center',
+    padding: 8,
+  },
+  button: {
+    margin: 'auto',
+    width: 60,
+  },
+  paragraph: {
+    margin: 10,
+    fontSize: 18,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+});
