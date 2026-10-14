@@ -439,3 +439,9 @@ input{
 a.exurl::after {
   content: attr(href);
 }
+.deladimg{
+    object-fit: contain;
+}
+.tinyletters{
+    font-size: smaller;
+}
