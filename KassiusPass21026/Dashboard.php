@@ -1,4 +1,5 @@
-
+<?php 
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -10,18 +11,18 @@
 <body>
     <div class="body">
         <div class="menu">
-            <h3>Chemphys<hr></h3>
+            <h3>Chemphys<hr></h3><?php
+            echo"
+            <p>Bem vindo</p>"?>
             <input type="text"  placeholder="🔍︎ Pesquisar">
             <div class="selection">
                 <a href="Dashboard.html" class="select">Dashboard</a>
                 <a href="Content.html" class="select">Conteúdo</a>
                 <a href="Calculator.html" class="select">Calculadoras</a>
-                <a href="logout.php?id" class="select">Trilhas</a>
+                <a href="courses.html" class="select">Trilhas</a>
                 <a href="Historic.html" class="select">Histórico</a>
                 <a href="Favorites.html" class="select">FAVORITOS</a>
-                </div>
-                <p class="exect">⏻ Sair</p>
-                </div>
+                <a href="ChemPhyslogout.php" id="logout" class="exect">⏻ Sair</a>
             </div>
         </div>
         <div class="content">
@@ -95,3 +96,8 @@
         </div>
     </div>
 </body>
+</html>
+<?php
+?>
+
+
