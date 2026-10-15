@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabela Periódica</title>
+    <title>]</title>
     <link rel="stylesheet" href="..\..\..\..\CSS\Content.css">
 </head>
 
@@ -26,7 +26,7 @@
             <p class="exect">⏻ Sair</p>
         </div>
         <div class="content">
-            <img src="../../../../Images/Periodic_table_large-pt_BR_impress14.png" style="width: 80vw; height: 90vh;">
+
         </div>
     </div>
 </body>
