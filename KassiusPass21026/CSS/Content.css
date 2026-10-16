@@ -449,3 +449,15 @@ a.exurl::after {
     width: 30%;
 
 }
+.spoiler {
+  background-color: #00021a;
+  color: #000;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 0 2px;
+}
+.spoiler.revelado {
+  background-color: transparent;
+  color: inherit;
+  cursor: default;
+}
