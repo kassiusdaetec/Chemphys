@@ -464,3 +464,12 @@ a.exurl::after {
 .eugostodeimg{
     width: 50%;
 }
+.red{
+    color: rgb(212, 18, 18);
+}
+.blu{
+    color: rgb(21, 21, 207);
+}
+.gre{
+    color:rgb(17, 210, 17)
+}
