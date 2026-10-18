@@ -32,3 +32,6 @@
 </body>
 
 </html>
+
+<p>O conteúdo dessa página foi gerado por IA pois a Moderna PLUS 
+                    não se aprofunda aos conceitos de base.</p>
