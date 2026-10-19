@@ -87,3 +87,7 @@ INPUT{
 .cal{
     font-family: 'Times New Roman';
 }
+
+.content math{
+    font-size: 1.3rem;
+}

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2-Velocidade</title>
+    <title>4-Velocidade</title>
     <link rel="stylesheet" href="../../../CSS/ContentMat.css">
 </head>
 
@@ -53,7 +53,23 @@
             <h2>Fórmula da Velocidade Média:</h2>
             <p>Para calcular a velocidade média de um corpo, numa trajetória em um determinado tempo gasto no percurso,
                 utiliza-se a seguinte expressão:</p>
-            <img src="../../../../Images/CalculoMin.png" alt="">
+            <math display="block" style="font-size: 1.2rem;">
+                <msub>
+                    <mi>V</mi>
+                    <mi>m</mi>
+                </msub>
+                <mo>=</mo>
+                <mfrac>
+                    <mrow>
+                        <mi>Δ</mi>
+                        <mi>S</mi>
+                    </mrow>
+                    <mrow>
+                        <mi>Δ</mi>
+                        <mi>T</mi>
+                    </mrow>
+                </mfrac>
+            </math>
             <p>Onde:</p>
             <p><b>ΔS:</b> intervalo de deslocamento (espaço) – posição final menos a posição
                 inicial (S<sub>final</sub> – S<sub>inicial</sub>);</p>
@@ -61,13 +77,43 @@
                 (T<sub>final</sub> – T<sub>inicial</sub>);</p>
             <p><b>Exemplo:</b> Um carro percorre 240 km em 4 horas. Qual foi sua velocidade média?</p>
             <p><b>Resolução:</b></p>
-            <img src="../../../../Images/CalculoMin3.png" alt="">
+            <math display="block" style="font-size: 1.2rem;">
+                <msub>
+                    <mi>V</mi>
+                    <mi>m</mi>
+                </msub>
+                <mo>=</mo>
+                <mfrac>
+                    <mn>240</mn>
+                    <mn>4</mn>
+                </mfrac>
+                <mo>=</mo>
+                <mn>60</mn>
+                <mtext>km/h</mtext>
+            </math>
+
             <h2>Conversão m/s para km/h:</h2>
             <p>No Sistema Internacional de Unidades (SI) a velocidade é dada em metros por segundo (m/s).</p>
             <p>Contudo, outra maneira de medir a velocidade é em quilômetros por hora (km/h), como notamos nas
                 velocidades marcadas pelos carros e nas placas de trânsito.</p>
             <p>Nesse sentido, importante destacar que para a converter m/s em km/h multiplicar por 3,6.</p>
-            <img src="../../../../Images/CalculoMin2.png" alt="">
+            <math display="block" style="font-size: 1.3rem; font-family: sans-serif;">
+                <mtext>m/s</mtext>
+                <mspace width="0.5em" />
+                <munderover>
+                    <mo>&#x21C4;</mo>
+                    <mrow>
+                        <mo>&divide;</mo>
+                        <mn>3,6</mn>
+                    </mrow>
+                    <mrow>
+                        <mo>&times;</mo>
+                        <mn>3,6</mn>
+                    </mrow>
+                </munderover>
+                <mspace width="0.5em" />
+                <mtext>km/h</mtext>
+            </math>
             <p>Por outro lado, para transformar km/h em m/s divide-se o valor por 3,6, visto que 1 km são 1000 metros e
                 1 hora correspondem a 3600 s.</p>
         </div>
