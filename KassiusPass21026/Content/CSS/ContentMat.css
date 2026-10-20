@@ -90,4 +90,6 @@ INPUT{
 
 .content math{
     font-size: 1.3rem;
+    font-weight: bold;
+    font-family: 'Times New Roman';
 }
