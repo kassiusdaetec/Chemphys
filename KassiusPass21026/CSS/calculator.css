@@ -1,0 +1,239 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --fundo: #f3f6f8;
+    --cartao: #ffffff;
+    --texto: #172b3a;
+    --texto-secundario: #6c7b88;
+    --destaque: #087f8c;
+    --destaque-hover: #066873;
+    --borda: #dce5e9;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
+}
+
+.pagina {
+    min-height: 100vh;
+    width: 100%;
+    padding: 28px 4%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.subtitulo {
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: var(--destaque);
+    margin-bottom: 8px;
+}
+
+.cabecalho h1 {
+    font-size: clamp(28px, 3vw, 42px);
+    margin-bottom: 8px;
+}
+
+.descricao {
+    color: var(--texto-secundario);
+    line-height: 1.5;
+}
+
+.voltar {
+    text-decoration: none;
+    color: var(--destaque);
+    border: 1px solid var(--borda);
+    background: var(--cartao);
+    border-radius: 10px;
+    padding: 12px 16px;
+    white-space: nowrap;
+    transition: 0.2s;
+}
+
+.voltar:hover {
+    background: var(--destaque);
+    color: white;
+}
+
+.grade-calculadoras {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(270px, 1fr));
+    gap: 20px;
+    flex: 1;
+}
+
+.calculadora {
+    background: var(--cartao);
+    border: 1px solid var(--borda);
+    border-radius: 16px;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    box-shadow: 0 5px 18px rgba(25, 50, 65, 0.04);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.calculadora:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(25, 50, 65, 0.09);
+}
+
+.topo-cartao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.numero {
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--destaque);
+    background: #e3f5f5;
+    padding: 7px 10px;
+    border-radius: 7px;
+}
+
+.categoria {
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: var(--texto-secundario);
+    text-align: right;
+}
+
+.calculadora h2 {
+    font-size: clamp(18px, 1.5vw, 23px);
+    margin-bottom: 8px;
+}
+
+.formula {
+    font-size: 15px;
+    color: var(--destaque);
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.form-calculo {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 12px;
+}
+
+.form-calculo label {
+    font-size: 13px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.form-calculo input {
+    width: 100%;
+    padding: 11px 12px;
+    font: inherit;
+    font-size: 14px;
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    background: #fbfcfd;
+    color: var(--texto);
+    outline: none;
+}
+
+.form-calculo input:focus {
+    border-color: var(--destaque);
+    box-shadow: 0 0 0 3px rgba(8, 127, 140, 0.12);
+}
+
+.form-calculo button {
+    width: 100%;
+    margin-top: auto;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: var(--destaque);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.form-calculo button:hover {
+    background: var(--destaque-hover);
+}
+
+.resultado {
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 8px;
+    background: #f0f7f7;
+    color: var(--texto);
+    font-size: 13px;
+    font-weight: bold;
+    overflow-wrap: anywhere;
+}
+
+.resultado.erro {
+    color: #a32626;
+    background: #fff0f0;
+}
+
+footer {
+    text-align: center;
+    color: var(--texto-secundario);
+    font-size: 12px;
+    padding-top: 4px;
+}
+
+@media (max-width: 1000px) {
+    .grade-calculadoras {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: auto;
+    }
+
+    .calculadora {
+        min-height: 300px;
+    }
+}
+
+@media (max-width: 600px) {
+    .pagina {
+        padding: 20px 15px;
+    }
+
+    .cabecalho {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .grade-calculadoras {
+        grid-template-columns: 1fr;
+    }
+
+    .calculadora {
+        min-height: 290px;
+    }
+}

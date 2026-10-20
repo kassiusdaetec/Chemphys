@@ -1,18 +1,35 @@
+
 <?php
+session_start(); 
+
 if($_SERVER["REQUEST_METHOD"]=="POST"){
-$nome=$_POST['nome'];
-$snome=htmlspecialchars($nome);
-$emai=$_POST['email'];
-$email=htmlspecialchars($emai);
-$word=$_POST['senha'];
-$sword=htmlspecialchars($word);
-$con=mysqlI_connect(
-    'localhost', 'root', '12345678', 'chemphys'
-);
-mysqlI_query(
-    $con, "insert into usuario(usuario, email, senha) values('$snome', '$email', '$sword')"
-);
-header("Location: Dashboard.html");
-    exit();
+
+    $nome = $_POST['nome'];
+    $email = $_POST['email'];
+    $word = $_POST['senha'];
+
+    $con = mysqli_connect('localhost', 'root', '', 'chemphys');
+
+    $verificar = mysqli_query(
+        $con,
+        "SELECT * FROM usuario WHERE email='$email'"
+    );
+
+    if(mysqli_num_rows($verificar) > 0){
+        echo "Este email já foi cadastrado!<br>";
+        echo "Volte a pagina de cadastro";
+    }else{
+        mysqli_query(
+            $con,
+            "INSERT INTO usuario(usuario, email, senha)
+             VALUES('$nome', '$email', '$word')"
+        );
+
+        $_SESSION['usuario_logado'] = $nome; 
+
+        header("Location: Dashboard.php");
+        exit(); 
+    }
 }
 ?>
+

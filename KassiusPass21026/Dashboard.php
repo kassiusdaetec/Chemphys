@@ -11,9 +11,7 @@
 <body>
     <div class="body">
         <div class="menu">
-            <h3>Chemphys<hr></h3><?php
-            echo"
-            <p>Bem vindo</p>"?>
+            <h3>Chemphys<hr></h3>
             <input type="text"  placeholder="🔍︎ Pesquisar">
             <div class="selection">
                 <a href="Dashboard.html" class="select">Dashboard</a>
