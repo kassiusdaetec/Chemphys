@@ -1,122 +1,130 @@
-const formularios = document.querySelectorAll(".form-calculo");
 
-formularios.forEach(function(formulario) {
-    formulario.addEventListener("submit", function(evento) {
-        evento.preventDefault();
-
-        const dados = new FormData(formulario);
-        const tipo = formulario.dataset.tipo;
-        const resultado = formulario.querySelector(".resultado");
-
-        let valor;
-        let unidade;
-        let formula;
-
-        function numero(campo) {
-            return Number(dados.get(campo));
-        }
-
-        function formatar(valor) {
-            return valor.toLocaleString("pt-BR", {
-                maximumFractionDigits: 6
-            });
-        }
-
-        resultado.classList.remove("erro");
-
-        switch (tipo) {
-            case "densidade": {
-                const massa = numero("massa");
-                const volume = numero("volume");
-
-                if (volume <= 0) {
-                    mostrarErro("O volume deve ser maior que zero.");
-                    return;
-                }
-
-                valor = massa / volume;
-                unidade = "g/mL";
-                formula = "d = m / V";
-                break;
-            }
-
-            case "velocidade": {
-                const distancia = numero("distancia");
-                const tempo = numero("tempo");
-
-                if (tempo <= 0) {
-                    mostrarErro("O tempo deve ser maior que zero.");
-                    return;
-                }
-
-                valor = distancia / tempo;
-                unidade = "m/s";
-                formula = "v = Δs / Δt";
-                break;
-            }
-
-            case "forca": {
-                const massa = numero("massa");
-                const aceleracao = numero("aceleracao");
-
-                valor = massa * aceleracao;
-                unidade = "N";
-                formula = "F = m · a";
-                break;
-            }
-
-            case "peso": {
-                const massa = numero("massa");
-                const gravidade = numero("gravidade");
-
-                valor = massa * gravidade;
-                unidade = "N";
-                formula = "P = m · g";
-                break;
-            }
-
-            case "concentracao": {
-                const massa = numero("massa");
-                const volume = numero("volume");
-
-                if (volume <= 0) {
-                    mostrarErro("O volume deve ser maior que zero.");
-                    return;
-                }
-
-                valor = massa / volume;
-                unidade = "g/L";
-                formula = "C = m / V";
-                break;
-            }
-
-            case "mol": {
-                const massa = numero("massa");
-                const molar = numero("molar");
-
-                if (molar <= 0) {
-                    mostrarErro("A massa molar deve ser maior que zero.");
-                    return;
-                }
-
-                valor = massa / molar;
-                unidade = "mol";
-                formula = "n = m / M";
-                break;
-            }
-
-            default:
-                mostrarErro("Calculadora não reconhecida.");
-                return;
-        }
-
-        resultado.textContent =
-            "Resultado: " + formatar(valor) + " " + unidade +
-            " | " + formula;
-
-        function mostrarErro(mensagem) {
-            resultado.textContent = mensagem;
-            resultado.classList.add("erro");
-        }
+const calculadoras = {
+    densidade: {
+        positivos: { volume: "O volume deve ser maior que zero." },
+        calcular: (d) => d.massa / d.volume,
+        unidade: "g/mL",
+        formula: "d = m / V"
+    },
+    velocidade: {
+        positivos: { tempo: "O tempo deve ser maior que zero." },
+        calcular: (d) => d.distancia / d.tempo,
+        unidade: "m/s",
+        formula: "v = Δs / Δt"
+    },
+    forca: {
+        calcular: (d) => d.massa * d.aceleracao,
+        unidade: "N",
+        formula: "F = m · a"
+    },
+    peso: {
+        calcular: (d) => d.massa * d.gravidade,
+        unidade: "N",
+        formula: "P = m · g"
+    },
+    concentracao: {
+        positivos: { volume: "O volume deve ser maior que zero." },
+        calcular: (d) => d.massa / d.volume,
+        unidade: "g/L",
+        formula: "C = m / V"
+    },
+    mol: {
+        positivos: { molar: "A massa molar deve ser maior que zero." },
+        calcular: (d) => d.massa / d.molar,
+        unidade: "mol",
+        formula: "n = m / M"
+    },
+    energiacinetica: {
+        calcular: (d) => d.massa * d.velocidade ** 2 / 2,
+        unidade: "J",
+        formula: "Ec = m · v² / 2"
+    },
+    trabalho: {
+        calcular: (d) => d.forca * d.deslocamento,
+        unidade: "J",
+        formula: "τ = F · d"
+    },
+    potencia: {
+        positivos: { tempo: "O tempo deve ser maior que zero." },
+        calcular: (d) => d.trabalho / d.tempo,
+        unidade: "W",
+        formula: "P = τ / Δt"
+    },
+    pressao: {
+        positivos: { area: "A área deve ser maior que zero." },
+        calcular: (d) => d.forca / d.area,
+        unidade: "Pa",
+        formula: "p = F / A"
+    },
+    molaridade: {
+        positivos: { volume: "O volume deve ser maior que zero." },
+        calcular: (d) => d.mol / d.volume,
+        unidade: "mol/L",
+        formula: "M = n / V"
+    },
+    massamol: {
+        calcular: (d) => d.mol * d.molar,
+        unidade: "g",
+        formula: "m = n · M"
+    }
+};
+ 
+function formatar(valor) {
+    return valor.toLocaleString("pt-BR", { maximumFractionDigits: 6 });
+}
+ 
+function mostrarErro(resultado, mensagem) {
+    resultado.textContent = mensagem;
+    resultado.classList.add("erro");
+}
+ 
+function lerCampos(formulario) {
+    const dados = {};
+    new FormData(formulario).forEach(function (valor, nome) {
+        dados[nome] = Number(String(valor).replace(",", "."));
     });
+    return dados;
+}
+ 
+function calcular(evento) {
+    evento.preventDefault();
+ 
+    const formulario = evento.currentTarget;
+    const resultado = formulario.querySelector(".resultado");
+    const config = calculadoras[formulario.dataset.tipo];
+ 
+    resultado.classList.remove("erro");
+ 
+    if (!config) {
+        mostrarErro(resultado, "Calculadora não reconhecida.");
+        return;
+    }
+ 
+    const dados = lerCampos(formulario);
+ 
+    for (const nome in dados) {
+        if (!Number.isFinite(dados[nome])) {
+            mostrarErro(resultado, "Preencha todos os campos com números válidos.");
+            return;
+        }
+    }
+ 
+    const positivos = config.positivos || {};
+    for (const nome in positivos) {
+        if (dados[nome] <= 0) {
+            mostrarErro(resultado, positivos[nome]);
+            return;
+        }
+    }
+ 
+    const valor = config.calcular(dados);
+ 
+    resultado.textContent =
+        "Resultado: " + formatar(valor) + " " + config.unidade +
+        " | " + config.formula;
+}
+ 
+document.querySelectorAll(".form-calculo").forEach(function (formulario) {
+    formulario.addEventListener("submit", calcular);
 });
+ 

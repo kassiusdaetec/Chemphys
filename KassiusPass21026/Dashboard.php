@@ -1,22 +1,32 @@
-<?php 
+<?php
+session_start();
+
+// Só entra quem estiver logado
+if (!isset($_SESSION["usuario"])) {
+    header("Location: loginChemPhys.html");
+    exit();
+}
+
+$nome = htmlspecialchars($_SESSION["usuario"], ENT_QUOTES, "UTF-8");
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="CSS/Dashboard.css">
 </head>
 <body>
     <div class="body">
         <div class="menu">
             <h3>Chemphys<hr></h3>
+            <p class="boas-vindas">Bem-vindo(a), <b><?= $nome ?></b>!</p>
             <input type="text"  placeholder="🔍︎ Pesquisar">
             <div class="selection">
-                <a href="Dashboard.html" class="select">Dashboard</a>
+                <a href="Dashboard.php" class="select">Dashboard</a>
                 <a href="Content.html" class="select">Conteúdo</a>
-                <a href="Calculator.html" class="select">Calculadoras</a>
+                <a href="Calculator.php" class="select">Calculadoras</a>
                 <a href="courses.html" class="select">Trilhas</a>
                 <a href="Historic.html" class="select">Histórico</a>
                 <a href="Favorites.html" class="select">FAVORITOS</a>
@@ -97,5 +107,3 @@
 </html>
 <?php
 ?>
-
-

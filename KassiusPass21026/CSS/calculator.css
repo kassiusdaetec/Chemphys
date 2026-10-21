@@ -1,4 +1,3 @@
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,25 +5,120 @@
 }
 
 :root {
+    --menu-fundo: #00021a;
+    --menu-hover: #28285e;
+    --menu-borda: gray;
     --fundo: #f3f6f8;
     --cartao: #ffffff;
-    --texto: #172b3a;
+    --texto: #00021a;
     --texto-secundario: #6c7b88;
-    --destaque: #087f8c;
-    --destaque-hover: #066873;
-    --borda: #dce5e9;
+    --destaque: #28285e;
+    --destaque-hover: #00021a;
+    --destaque-claro: #e8e8f4;
+    --borda: #dcdce8;
 }
 
 body {
     min-height: 100vh;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: sans-serif;
     background: var(--fundo);
     color: var(--texto);
 }
 
-.pagina {
+.body {
+    display: flex;
+    flex-direction: row;
     min-height: 100vh;
-    width: 100%;
+}
+
+.menu {
+    width: 200px;
+    margin: 20px;
+    flex-shrink: 0;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    background-color: var(--menu-fundo);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.menu h3 {
+    padding: 10px;
+    color: white;
+}
+
+.menu hr {
+    margin-top: 10px;
+    border: none;
+    border-top: 1px solid var(--menu-borda);
+}
+
+.menu input {
+    background-color: var(--menu-fundo);
+    padding: 10px;
+    border: var(--menu-borda) solid 2px;
+    border-radius: 3px;
+    margin: 0 10px 10px;
+    width: calc(100% - 20px);
+    color: gray;
+    font: inherit;
+    font-size: 14px;
+}
+
+.menu input:focus {
+    outline: none;
+    border-color: white;
+}
+
+.selection {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.select {
+    text-decoration: none;
+    padding: 10px;
+    margin: 5px;
+    color: white;
+    font-size: 14px;
+}
+
+.select:hover {
+    transition: 0.3s;
+    margin-left: 2px;
+    border-radius: 5px;
+    background-color: var(--menu-hover);
+}
+
+.select.ativo {
+    border-radius: 5px;
+    background-color: var(--menu-hover);
+}
+
+.exect {
+    text-decoration: none;
+    margin: 10px;
+    margin-top: auto;
+    padding: 10px;
+    color: white;
+    font-size: 14px;
+    border-radius: 5px;
+    background-color: var(--menu-hover);
+    border: var(--menu-borda) solid 2px;
+}
+
+.exect:hover {
+    background-color: #3a3a7a;
+    transition: 0.3s;
+}
+
+.pagina {
+    flex: 1;
+    min-width: 0;
+    min-height: 100vh;
     padding: 28px 4%;
     display: flex;
     flex-direction: column;
@@ -38,39 +132,11 @@ body {
     gap: 20px;
 }
 
-.subtitulo {
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    color: var(--destaque);
-    margin-bottom: 8px;
-}
-
 .cabecalho h1 {
     font-size: clamp(28px, 3vw, 42px);
     margin-bottom: 8px;
 }
 
-.descricao {
-    color: var(--texto-secundario);
-    line-height: 1.5;
-}
-
-.voltar {
-    text-decoration: none;
-    color: var(--destaque);
-    border: 1px solid var(--borda);
-    background: var(--cartao);
-    border-radius: 10px;
-    padding: 12px 16px;
-    white-space: nowrap;
-    transition: 0.2s;
-}
-
-.voltar:hover {
-    background: var(--destaque);
-    color: white;
-}
 
 .grade-calculadoras {
     display: grid;
@@ -83,18 +149,18 @@ body {
 .calculadora {
     background: var(--cartao);
     border: 1px solid var(--borda);
-    border-radius: 16px;
-    padding: 22px;
+    border-radius: 8px;
+    padding: 40px;
     display: flex;
     flex-direction: column;
     min-width: 0;
-    box-shadow: 0 5px 18px rgba(25, 50, 65, 0.04);
+    box-shadow: 0 0 8px #0000001a;
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .calculadora:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(25, 50, 65, 0.09);
+    box-shadow: 0 8px 20px rgba(0, 2, 26, 0.12);
 }
 
 .topo-cartao {
@@ -109,9 +175,9 @@ body {
     font-size: 13px;
     font-weight: bold;
     color: var(--destaque);
-    background: #e3f5f5;
+    background: var(--destaque-claro);
     padding: 7px 10px;
-    border-radius: 7px;
+    border-radius: 5px;
 }
 
 .categoria {
@@ -155,15 +221,15 @@ body {
     font: inherit;
     font-size: 14px;
     border: 1px solid var(--borda);
-    border-radius: 8px;
-    background: #fbfcfd;
+    border-radius: 5px;
+    background: #fbfbfd;
     color: var(--texto);
     outline: none;
 }
 
 .form-calculo input:focus {
     border-color: var(--destaque);
-    box-shadow: 0 0 0 3px rgba(8, 127, 140, 0.12);
+    box-shadow: 0 0 0 3px rgba(40, 40, 94, 0.15);
 }
 
 .form-calculo button {
@@ -171,7 +237,7 @@ body {
     margin-top: auto;
     padding: 12px;
     border: none;
-    border-radius: 8px;
+    border-radius: 5px;
     background: var(--destaque);
     color: white;
     font-weight: bold;
@@ -188,8 +254,8 @@ body {
     display: flex;
     align-items: center;
     padding: 10px;
-    border-radius: 8px;
-    background: #f0f7f7;
+    border-radius: 5px;
+    background: #f1f1f8;
     color: var(--texto);
     font-size: 13px;
     font-weight: bold;
@@ -201,14 +267,7 @@ body {
     background: #fff0f0;
 }
 
-footer {
-    text-align: center;
-    color: var(--texto-secundario);
-    font-size: 12px;
-    padding-top: 4px;
-}
-
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
     .grade-calculadoras {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         grid-template-rows: auto;
@@ -219,9 +278,44 @@ footer {
     }
 }
 
-@media (max-width: 600px) {
+@media screen and (max-width: 700px) {
+    .body {
+        flex-direction: column;
+    }
+
+    .menu {
+        width: 100%;
+        height: auto;
+        position: static;
+        padding: 15px;
+    }
+
+    .menu input {
+        width: 100%;
+        margin: 0 0 10px;
+    }
+
+    .selection {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .select {
+        border: 1px solid #0783a8;
+        padding: 6px 12px;
+        margin: 0;
+        border-radius: 5px;
+        font-size: 12px;
+    }
+
+    .exect {
+        margin: 10px 0 0;
+    }
+
     .pagina {
         padding: 20px 15px;
+        min-height: auto;
     }
 
     .cabecalho {
