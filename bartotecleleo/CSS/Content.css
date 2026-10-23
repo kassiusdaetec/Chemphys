@@ -1,0 +1,59 @@
+body{
+    font-family: sans-serif;
+}
+
+.body{
+    display: flex;
+    flex-direction: row;
+}
+
+/*Menu*/
+
+.menu{
+    height: 725px;
+    width: 200px;
+    background-color: #00021a;
+}
+
+.selection{
+    display: flex;
+    flex-direction: column;
+}
+
+.select{
+    text-decoration: none;
+    padding: 10px;
+    margin: 5px;
+    color: white;
+}
+
+.select:hover{
+    transition: 0.3s;
+    margin-left: 2px;
+    border-radius: 5px;
+    background-color: #28285e;
+}
+
+INPUT{
+    background-color: #00021a;
+    padding: 10px;
+    border: gray solid 2px;
+    border-radius: 3px;
+    margin: 4px;
+    color: gray;
+}
+
+h3{
+    padding: 10px;
+    color: white;       
+}
+
+.exect{
+    margin: 10px;
+    margin-top: 230px;
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+    background-color: #28285e;
+    border: gray solid 2px;
+}

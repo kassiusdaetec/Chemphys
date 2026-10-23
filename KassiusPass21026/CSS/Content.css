@@ -231,6 +231,7 @@ h3{
     transform: rotate(90deg);
 }
 
+
 /*dashboard*/
 
 .progressBar{
@@ -472,4 +473,9 @@ a.exurl::after {
 }
 .gre{
     color:rgb(17, 210, 17)
+}
+.substimg{
+    display: flex;
+    position:absolute;
+    right: 0;
 }

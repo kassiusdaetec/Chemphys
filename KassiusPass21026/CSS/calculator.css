@@ -1,0 +1,333 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --menu-fundo: #00021a;
+    --menu-hover: #28285e;
+    --menu-borda: gray;
+    --fundo: #f3f6f8;
+    --cartao: #ffffff;
+    --texto: #00021a;
+    --texto-secundario: #6c7b88;
+    --destaque: #28285e;
+    --destaque-hover: #00021a;
+    --destaque-claro: #e8e8f4;
+    --borda: #dcdce8;
+}
+
+body {
+    min-height: 100vh;
+    font-family: sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
+}
+
+.body {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+}
+
+.menu {
+    width: 200px;
+    margin: 20px;
+    flex-shrink: 0;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    background-color: var(--menu-fundo);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.menu h3 {
+    padding: 10px;
+    color: white;
+}
+
+.menu hr {
+    margin-top: 10px;
+    border: none;
+    border-top: 1px solid var(--menu-borda);
+}
+
+.menu input {
+    background-color: var(--menu-fundo);
+    padding: 10px;
+    border: var(--menu-borda) solid 2px;
+    border-radius: 3px;
+    margin: 0 10px 10px;
+    width: calc(100% - 20px);
+    color: gray;
+    font: inherit;
+    font-size: 14px;
+}
+
+.menu input:focus {
+    outline: none;
+    border-color: white;
+}
+
+.selection {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.select {
+    text-decoration: none;
+    padding: 10px;
+    margin: 5px;
+    color: white;
+    font-size: 14px;
+}
+
+.select:hover {
+    transition: 0.3s;
+    margin-left: 2px;
+    border-radius: 5px;
+    background-color: var(--menu-hover);
+}
+
+.select.ativo {
+    border-radius: 5px;
+    background-color: var(--menu-hover);
+}
+
+.exect {
+    text-decoration: none;
+    margin: 10px;
+    margin-top: auto;
+    padding: 10px;
+    color: white;
+    font-size: 14px;
+    border-radius: 5px;
+    background-color: var(--menu-hover);
+    border: var(--menu-borda) solid 2px;
+}
+
+.exect:hover {
+    background-color: #3a3a7a;
+    transition: 0.3s;
+}
+
+.pagina {
+    flex: 1;
+    min-width: 0;
+    min-height: 100vh;
+    padding: 28px 4%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.cabecalho h1 {
+    font-size: clamp(28px, 3vw, 42px);
+    margin-bottom: 8px;
+}
+
+
+.grade-calculadoras {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(270px, 1fr));
+    gap: 20px;
+    flex: 1;
+}
+
+.calculadora {
+    background: var(--cartao);
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    box-shadow: 0 0 8px #0000001a;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.calculadora:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 2, 26, 0.12);
+}
+
+.topo-cartao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.numero {
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--destaque);
+    background: var(--destaque-claro);
+    padding: 7px 10px;
+    border-radius: 5px;
+}
+
+.categoria {
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: var(--texto-secundario);
+    text-align: right;
+}
+
+.calculadora h2 {
+    font-size: clamp(18px, 1.5vw, 23px);
+    margin-bottom: 8px;
+}
+
+.formula {
+    font-size: 15px;
+    color: var(--destaque);
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.form-calculo {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 12px;
+}
+
+.form-calculo label {
+    font-size: 13px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.form-calculo input {
+    width: 100%;
+    padding: 11px 12px;
+    font: inherit;
+    font-size: 14px;
+    border: 1px solid var(--borda);
+    border-radius: 5px;
+    background: #fbfbfd;
+    color: var(--texto);
+    outline: none;
+}
+
+.form-calculo input:focus {
+    border-color: var(--destaque);
+    box-shadow: 0 0 0 3px rgba(40, 40, 94, 0.15);
+}
+
+.form-calculo button {
+    width: 100%;
+    margin-top: auto;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background: var(--destaque);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.form-calculo button:hover {
+    background: var(--destaque-hover);
+}
+
+.resultado {
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    background: #f1f1f8;
+    color: var(--texto);
+    font-size: 13px;
+    font-weight: bold;
+    overflow-wrap: anywhere;
+}
+
+.resultado.erro {
+    color: #a32626;
+    background: #fff0f0;
+}
+
+@media (max-width: 1200px) {
+    .grade-calculadoras {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: auto;
+    }
+
+    .calculadora {
+        min-height: 300px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .body {
+        flex-direction: column;
+    }
+
+    .menu {
+        width: 100%;
+        height: auto;
+        position: static;
+        padding: 15px;
+    }
+
+    .menu input {
+        width: 100%;
+        margin: 0 0 10px;
+    }
+
+    .selection {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .select {
+        border: 1px solid #0783a8;
+        padding: 6px 12px;
+        margin: 0;
+        border-radius: 5px;
+        font-size: 12px;
+    }
+
+    .exect {
+        margin: 10px 0 0;
+    }
+
+    .pagina {
+        padding: 20px 15px;
+        min-height: auto;
+    }
+
+    .cabecalho {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .grade-calculadoras {
+        grid-template-columns: 1fr;
+    }
+
+    .calculadora {
+        min-height: 290px;
+    }
+}

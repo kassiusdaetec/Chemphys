@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Calculadoras</title>
+
+    <link rel="stylesheet" href="CSS/calculator.css">
+    <script src="/JS/Calculator.js" defer></script>
+</head>
+
+<body>
+
+<div class="body">
+
+    <div class="menu">
+        <h3>Chemphys<hr></h3>
+        <input type="text" placeholder="🔍︎ Pesquisar">
+        <div class="selection">
+            <a href="Dashboard.php" class="select">Dashboard</a>
+            <a href="Content.html" class="select">Conteúdo</a>
+            <a href="Calculator.html" class="select ativo">Calculadoras</a>
+            <a href="courses.html" class="select">Trilhas</a>
+            <a href="Historic.html" class="select">Histórico</a>
+            <a href="Favorites.html" class="select">Favoritos</a>
+            <a href="ChemPhyslogout.php" id="logout" class="exect">⏻ Sair</a>
+        </div>
+    </div>
+
+    <div class="pagina">
+        <header class="cabecalho">
+            <div>
+                <h1>Calculadoras</h1>
+            </div>
+        </header>
+
+        <main class="grade-calculadoras">
+            <section class="calculadora">
+               
+
+                <h2>Densidade</h2>
+                <p class="formula">d = m / V</p>
+
+                <form class="form-calculo" data-tipo="densidade">
+                    <label>
+                        Massa (g)
+                        <input type="number" name="massa"
+                               min="0" step="any" placeholder="Ex.: 100" required>
+                    </label>
+
+                    <label>
+                        Volume (mL)
+                        <input type="number" name="volume"
+                               min="0" step="any" placeholder="Ex.: 20" required>
+                    </label>
+
+                    <button type="submit">Calcular </button>
+                    <p class="resultado" aria-live="polite">Resultado: —</p>
+                </form>
+            </section>
+
+            <section class="calculadora">
+               
+
+                <h2>Velocidade média</h2>
+                <p class="formula">v = Δs / Δt</p>
+
+                <form class="form-calculo" data-tipo="velocidade">
+                    <label>
+                        Distância percorrida (m)
+                        <input type="number" name="distancia"
+                               min="0" step="any" placeholder="Ex.: 100" required>
+                    </label>
+
+                    <label>
+                        Tempo (s)
+                        <input type="number" name="tempo"
+                               min="0" step="any" placeholder="Ex.: 20" required>
+                    </label>
+
+                    <button type="submit">Calcular </button>
+                    <p class="resultado" aria-live="polite">Resultado: —</p>
+                </form>
+            </section>
+
+            <section class="calculadora">
+               
+
+                <h2>Força resultante</h2>
+                <p class="formula">F = m · a</p>
+
+                <form class="form-calculo" data-tipo="forca">
+                    <label>
+                        Massa (kg)
+                        <input type="number" name="massa"
+                               min="0" step="any" placeholder="Ex.: 10" required>
+                    </label>
+
+                    <label>
+                        Aceleração (m/s²)
+                        <input type="number" name="aceleracao"
+                               step="any" placeholder="Ex.: 2" required>
+                    </label>
+
+                    <button type="submit">Calcular </button>
+                    <p class="resultado" aria-live="polite">Resultado: —</p>
+                </form>
+            </section>
+
+            <section class="calculadora">
+                
+
+                <h2>Peso</h2>
+                <p class="formula">P = m · g</p>
+
+                <form class="form-calculo" data-tipo="peso">
+                    <label>
+                        Massa (kg)
+                        <input type="number" name="massa"
+                               min="0" step="any" placeholder="Ex.: 60" required>
+                    </label>
+
+                    <label>
+                        Gravidade (m/s²)
+                        <input type="number" name="gravidade"
+                               min="0" step="any" value="9.8" required>
+                    </label>
+
+                    <button type="submit">Calcular </button>
+                    <p class="resultado" aria-live="polite">Resultado: —</p>
+                </form>
+            </section>
+
+            <section class="calculadora">
+
+                <h2>Concentração comum</h2>
+                <p class="formula">C = m / V</p>
+
+                <form class="form-calculo" data-tipo="concentracao">
+                    <label>
+                        Massa do soluto (g)
+                        <input type="number" name="massa"
+                               min="0" step="any" placeholder="Ex.: 20" required>
+                    </label>
+
+                    <label>
+                        Volume da solução (L)
+                        <input type="number" name="volume"
+                               min="0" step="any" placeholder="Ex.: 2" required>
+                    </label>
+
+                    <button type="submit">Calcular </button>
+                    <p class="resultado" aria-live="polite">Resultado: —</p>
+                </form>
+            </section>
+
+            <section class="calculadora">
+
+                <h2>Quantidade de matéria</h2>
+                <p class="formula">n = m / M</p>
+
+                <form class="form-calculo" data-tipo="mol">
+                    <label>
+                        Massa da amostra (g)
+                        <input type="number" name="massa"
+                               min="0" step="any" placeholder="Ex.: 36" required>
+                    </label>
+
+                    <label>
+                        Massa molar (g/mol)
+                        <input type="number" name="molar"
+                               min="0" step="any" placeholder="Ex.: 18" required>
+                    </label>
+
+                    <button type="submit">Calcular</button>
+                    <p class="resultado" aria-live="polite">Resultado: —</p>
+                </form>
+            </section>
+
+            <section class="calculadora">
+
+                <h2>Energia cinética</h2>
+                <p class="formula">Ec = m · v² / 2</p>
+
+                <form class="form-calculo" data-tipo="energiacinetica">
+                    <label>
+                        Massa (kg)
+                        <input type="number" name="massa"
+                               min="0" step="any" placeholder="Ex.: 2" required>
+                    </label>
+
+                    <label>
+                        Velocidade (m/s)
+                        <input type="number" name="velocidade"
+                               step="any" placeholder="Ex.: 10" required>
+                    </label>
+
+                    <button type="submit">Calcular</button>
+                    <p class="resultado" aria-live="polite">Resultado: —</p>
+                </form>
+            </section>
+
+            <section class="calculadora">
+
+                <h2>Trabalho</h2>
+                <p class="formula">τ = F · d</p>
+
+                <form class="form-calculo" data-tipo="trabalho">
+                    <label>
+                        Força (N)
+                        <input type="number" name="forca"
+                               step="any" placeholder="Ex.: 50" required>
+                    </label>
+
+                    <label>
+                        Deslocamento (m)
+                        <input type="number" name="deslocamento"
+                               min="0" step="any" placeholder="Ex.: 4" required>
+                    </label>
+
+                    <button type="submit">Calcular</button>
+                    <p class="resultado" aria-live="polite">Resultado: —</p>
+                </form>
+            </section>
+
+            <section class="calculadora">
+
+                <h2>Potência</h2>
+                <p class="formula">P = τ / Δt</p>
+
+                <form class="form-calculo" data-tipo="potencia">
+                    <label>
+                        Trabalho (J)
+                        <input type="number" name="trabalho"
+                               step="any" placeholder="Ex.: 600" required>
+                    </label>
+
+                    <label>
+                        Tempo (s)
+                        <input type="number" name="tempo"
+                               min="0" step="any" placeholder="Ex.: 20" required>
+                    </label>
+
+                    <button type="submit">Calcular</button>
+                    <p class="resultado" aria-live="polite">Resultado: —</p>
+                </form>
+            </section>
+
+            <section class="calculadora">
+
+                <h2>Pressão</h2>
+                <p class="formula">p = F / A</p>
+
+                <form class="form-calculo" data-tipo="pressao">
+                    <label>
+                        Força (N)
+                        <input type="number" name="forca"
+                               min="0" step="any" placeholder="Ex.: 100" required>
+                    </label>
+
+                    <label>
+                        Área (m²)
+                        <input type="number" name="area"
+                               min="0" step="any" placeholder="Ex.: 0.5" required>
+                    </label>
+
+                    <button type="submit">Calcular</button>
+                    <p class="resultado" aria-live="polite">Resultado: —</p>
+                </form>
+            </section>
+
+            <section class="calculadora">
+
+                <h2>Molaridade</h2>
+                <p class="formula">M = n / V</p>
+
+                <form class="form-calculo" data-tipo="molaridade">
+                    <label>
+                        Quantidade de matéria (mol)
+                        <input type="number" name="mol"
+                               min="0" step="any" placeholder="Ex.: 0.5" required>
+                    </label>
+
+                    <label>
+                        Volume da solução (L)
+                        <input type="number" name="volume"
+                               min="0" step="any" placeholder="Ex.: 2" required>
+                    </label>
+
+                    <button type="submit">Calcular</button>
+                    <p class="resultado" aria-live="polite">Resultado: —</p>
+                </form>
+            </section>
+
+            <section class="calculadora">
+
+                <h2>Massa a partir do mol</h2>
+                <p class="formula">m = n · M</p>
+
+                <form class="form-calculo" data-tipo="massamol">
+                    <label>
+                        Quantidade de matéria (mol)
+                        <input type="number" name="mol"
+                               min="0" step="any" placeholder="Ex.: 2" required>
+                    </label>
+
+                    <label>
+                        Massa molar (g/mol)
+                        <input type="number" name="molar"
+                               min="0" step="any" placeholder="Ex.: 18" required>
+                    </label>
+
+                    <button type="submit">Calcular</button>
+                    <p class="resultado" aria-live="polite">Resultado: —</p>
+                </form>
+            </section>
+        </main>
+    </div>
+
+</div>
+
+</body>
+</html>
