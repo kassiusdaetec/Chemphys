@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3-Escala de Temperatura</title>
+    <link rel="stylesheet" href="../../../CSS/ContentMat.css">
+</head>
+
+<body>
+    <div class="body">
+        <div class="menu">
+            <h3>Chemphys
+                <hr>
+            </h3>
+            <input type="text" placeholder="🔍︎ Pesquisar">
+            <div class="selection">
+                <a href="../../../../Dashboard.html" class="select">Dashboard</a>
+                <a href="../../../../Content.html" class="select">Conteúdo</a>
+                <a href="../../../../Calculator.html" class="select">Calculadoras</a>
+                <a href="../../../../Course.html" class="select">Trilhas</a>
+                <a href="../../../../Historic.html" class="select">Histórico</a>
+                <a href="../../../../Favorites.html" class="select">FAVORITOS</a>
+            </div>
+            <p class="exect">⏻ Sair</p>
+        </div>
+        <div class="content">
+            <div class="first">
+                <img src="../../../../Images/EscalaTermo.png" alt="">
+                <div class="firstText">
+                    <h1>Escala de Temperatura</h1>
+                    <p>As três principais escalas de temperatura utilizadas no mundo atualmente são a Celsius (°C), a
+                        Fahrenheit (°F) e a Kelvin (K). Elas usam como base pontos de referência fixos, como o
+                        congelamento e a ebulição da água sob pressão atmosférica normal.</p>
+                </div>
+            </div>
+            <h2>Comparação das Escalas:</h2>
+            <p>A tabela abaixo mostra a relação entre os pontos fixos da água e o limite físico do universo (zero
+                absoluto) em cada sistema:</p>
+                <img src="../../../../Images/TabelaTemperatura.png" alt="">
+            <h2>Fórmulas de Conversão:</h2>
+            <p>Para transformar o valor de uma escala para outra, utilizam-se as seguintes relações matemáticas
+                proporcionais:</p>
+            <h3>Celsius ↔ Fahrenheit:</h3>
+            <math display="inline">
+                <mfrac>
+                    <msub>
+                        <mi>T</mi>
+                        <mi>C</mi>
+                    </msub>
+                    <mn>5</mn>
+                </mfrac>
+
+                <mo>=</mo>
+                <mfrac>
+                    <mrow>
+                        <msub>
+                            <mi>T</mi>
+                            <mi>F</mi>
+                        </msub>
+                        <mo>&minus;</mo>
+                        <mn>32</mn>
+                    </mrow>
+                    <mn>9</mn>
+                </mfrac>
+            </math>
+            <h3>Celsius ↔ Kelvin:</h3>
+            <math display="inline">
+                <msub>
+                    <mi>T</mi>
+                    <mi>K</mi>
+                </msub>
+
+                <mo>=</mo>
+                <msub>
+                    <mi>T</mi>
+                    <mi>C</mi>
+                </msub>
+
+                <mo>+</mo>
+                <mn>273,15</mn>
+            </math>
+            <h3>Fahrenheit ↔ Kelvin:</h3>
+            <math display="inline">
+                <mfrac>
+                    <mrow>
+                        <msub>
+                            <mi>T</mi>
+                            <mi>F</mi>
+                        </msub>
+                        <mo>&minus;</mo>
+                        <mn>32</mn>
+                    </mrow>
+                    <mn>9</mn>
+                </mfrac>
+
+                <mo>=</mo>
+                <mfrac>
+                    <mrow>
+                        <msub>
+                            <mi>T</mi>
+                            <mi>K</mi>
+                        </msub>
+                        <mo>&minus;</mo>
+                        <mn>273,15</mn>
+                    </mrow>
+                    <mn>5</mn>
+                </mfrac>
+            </math>
+        </div>
+    </div>
+</body>
+
+</html>
