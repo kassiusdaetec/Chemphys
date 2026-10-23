@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1-Termodinâmica</title>
+    <title>6-Rendimento</title>
     <link rel="stylesheet" href="../../../CSS/ContentMat.css">
 </head>
 
@@ -27,11 +27,76 @@
         </div>
         <div class="content">
             <div class="first">
-                <img src="../../../../Images/Termodinamica.png" alt="">
+                <img src="../../../../Images/Rendimento.png" alt="">
                 <div class="firstText">
+                    <h1>Rendimento</h1>
+                    <p>Rendimento é a medida de aproveitamento de uma máquina térmica, que converte em trabalho apenas
+                        uma parte da energia térmica retirada da fonte quente. A razão entre o trabalho realizado pela
+                        máquina e a quantidade de calor Q<sub>1</sub> retirada da fonte quente dá uma ideia desse
+                        “aproveitamento” da energia. Essa razão, denominada rendimento da máquina térmica, é
+                        representada pela letra grega eta (η). </p>
                 </div>
             </div>
+            <p>Fórmula:</p>
+            <math display="inline">
+                <mi>&#x3B7;</mi>
+                <mo>=</mo>
+                <mfrac>
+                    <mi>&#x3C4;</mi>
+                    <mrow>
+                        <msub>
+                            <mi>Q</mi>
+                            <mn>1</mn>
+                        </msub>
+                    </mrow>
+                </mfrac>
+                <mo>=</mo>
+                <mfrac>
+                    <mrow>
+                        <msub>
+                            <mi>Q</mi>
+                            <mn>1</mn>
+                        </msub>
+                        <mo>&#x2212;</mo>
+                        <msub>
+                            <mi>Q</mi>
+                            <mn>2</mn>
+                        </msub>
+                    </mrow>
+                    <mrow>
+                        <msub>
+                            <mi>Q</mi>
+                            <mn>1</mn>
+                        </msub>
+                    </mrow>
+                </mfrac>
+                <mo>=</mo>
+                <mn>1</mn>
+                <mo>&#x2212;</mo>
+                <mfrac>
+                    <mrow>
+                        <msub>
+                            <mi>Q</mi>
+                            <mn>2</mn>
+                        </msub>
+                    </mrow>
+                    <mrow>
+                        <msub>
+                            <mi>Q</mi>
+                            <mn>1</mn>
+                        </msub>
+                    </mrow>
+                </mfrac>
+            </math>
+            <p>É comum o rendimento ser expresso em porcentagem e, sendo τ sempre menor que Q<sub>1</sub>, sempre
+                teremos <i class="cal">0 ≤ η &lt; 1</i> ou <i class="cal">0 ≤ η &lt; 100%</i> para qualquer máquina. As
+                grandezas Q<sub>1</sub> e Q<sub>2</sub> são os valores absolutos das quantidades de calor trocadas com
+                as fontes quente e fria, respectivamente.</p>
+            <p>Observação: não existe máquina térmica com rendimento de 100%. Se assim fosse, deveríamos ter
+                Q<sub>2</sub> = 0 e <i class="cal">τ</i> = Q<sub>1</sub>, o que estaria em contradição com o enunciado
+                de Kelvin -Planck da segunda lei da Termodinâmica.</p>
         </div>
     </div>
 </body>
+
 </html>
