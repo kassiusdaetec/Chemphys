@@ -1,0 +1,117 @@
+:root {
+    --texto: #00021a;
+    --texto-secundario: #6c7b88;
+    --destaque: #28285e;
+    --borda: #dcdce8;
+}
+
+.exect {
+    text-decoration: none;
+}
+
+.content h1 {
+    margin: 20px 20px 10px;
+}
+
+#btnLimpar {
+    margin: 0 20px;
+    padding: 8px 14px;
+}
+
+.vazio {
+    margin: 20px;
+    color: #777;
+    font-style: italic;
+}
+
+.lista-historico {
+    align-items: flex-start;
+}
+
+.item-hist {
+    display: flex;
+    flex-direction: column;
+}
+
+.data-hist {
+    display: block;
+    max-width: 200px;
+    margin: 0px 20px 4px;
+    font-size: 12px;
+    color: var(--texto-secundario);
+}
+
+.calculadora {
+    box-sizing: border-box;
+    width: 280px;
+    margin: 20px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    color: var(--texto);
+    box-shadow: 0 0 8px #0000001a;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.calculadora:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 2, 26, 0.12);
+}
+
+.calculadora h2 {
+    font-size: 20px;
+    margin: 0 0 8px;
+}
+
+.calculadora .formula {
+    font-size: 15px;
+    color: var(--destaque);
+    font-weight: bold;
+    margin: 0 0 20px;
+}
+
+.form-calculo {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.form-calculo label {
+    font-size: 13px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.form-calculo input {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding: 11px 12px;
+    font: inherit;
+    font-size: 14px;
+    border: 1px solid var(--borda);
+    border-radius: 5px;
+    background: #fbfbfd;
+    color: var(--texto);
+    outline: none;
+    cursor: default;
+}
+
+.form-calculo .resultado {
+    margin: 0;
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    background: #f1f1f8;
+    color: var(--texto);
+    font-size: 13px;
+    font-weight: bold;
+    overflow-wrap: anywhere;
+}

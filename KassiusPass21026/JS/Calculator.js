@@ -1,4 +1,3 @@
-
 const calculadoras = {
     densidade: {
         positivos: { volume: "O volume deve ser maior que zero." },
@@ -68,16 +67,16 @@ const calculadoras = {
         formula: "m = n · M"
     }
 };
- 
+
 function formatar(valor) {
     return valor.toLocaleString("pt-BR", { maximumFractionDigits: 6 });
 }
- 
+
 function mostrarErro(resultado, mensagem) {
     resultado.textContent = mensagem;
     resultado.classList.add("erro");
 }
- 
+
 function lerCampos(formulario) {
     const dados = {};
     new FormData(formulario).forEach(function (valor, nome) {
@@ -85,30 +84,68 @@ function lerCampos(formulario) {
     });
     return dados;
 }
- 
+const CHAVE_HISTORICO = "chemphys_historico";
+const LIMITE_HISTORICO = 100;
+
+function salvarCalculoNoHistorico(formulario, config, valor) {
+    try {
+        const secao = formulario.closest(".calculadora");
+
+        const campos = [];
+        formulario.querySelectorAll("label").forEach(function (label) {
+            const input = label.querySelector("input");
+            const copia = label.cloneNode(true);
+            copia.querySelector("input").remove();
+            campos.push({
+                rotulo: copia.textContent.trim(),
+                valor: input.value
+            });
+        });
+
+        const entrada = {
+            tipo: "calculo",
+            data: new Date().toISOString(),
+            titulo: secao.querySelector("h2").textContent.trim(),
+            formula: config.formula,
+            campos: campos,
+            resultado: formatar(valor) + " " + config.unidade
+        };
+
+        let historico = [];
+        try {
+            const lido = JSON.parse(localStorage.getItem(CHAVE_HISTORICO));
+            if (Array.isArray(lido)) historico = lido;
+        } catch (e) { }
+
+        historico.unshift(entrada);
+        localStorage.setItem(CHAVE_HISTORICO, JSON.stringify(historico.slice(0, LIMITE_HISTORICO)));
+    } catch (e) {
+    }
+}
+
 function calcular(evento) {
     evento.preventDefault();
- 
+
     const formulario = evento.currentTarget;
     const resultado = formulario.querySelector(".resultado");
     const config = calculadoras[formulario.dataset.tipo];
- 
+
     resultado.classList.remove("erro");
- 
+
     if (!config) {
         mostrarErro(resultado, "Calculadora não reconhecida.");
         return;
     }
- 
+
     const dados = lerCampos(formulario);
- 
+
     for (const nome in dados) {
         if (!Number.isFinite(dados[nome])) {
             mostrarErro(resultado, "Preencha todos os campos com números válidos.");
             return;
         }
     }
- 
+
     const positivos = config.positivos || {};
     for (const nome in positivos) {
         if (dados[nome] <= 0) {
@@ -116,15 +153,15 @@ function calcular(evento) {
             return;
         }
     }
- 
+
     const valor = config.calcular(dados);
- 
+
     resultado.textContent =
         "Resultado: " + formatar(valor) + " " + config.unidade +
         " | " + config.formula;
+    salvarCalculoNoHistorico(formulario, config, valor);
 }
- 
+
 document.querySelectorAll(".form-calculo").forEach(function (formulario) {
     formulario.addEventListener("submit", calcular);
 });
- 

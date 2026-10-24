@@ -106,14 +106,14 @@ h3{
 .carrossel{
     display: flex;
     flex-direction: row;
-    width: 1170px;
+    width: 1100px;
     height: 500px;
     margin-left: 20px;
     overflow: hidden;
 }
 
 .carrossel img{
-    width: 1170px;
+    width: 1100px;
     height: 500px;
     animation: carrossel 24s infinite ease-in-out;
 }
@@ -436,7 +436,6 @@ input{
     display: flex;
     flex-direction: row;
 }
-/* Automatically grab the href attribute value and display it as text */
 a.exurl::after {
   content: attr(href);
 }

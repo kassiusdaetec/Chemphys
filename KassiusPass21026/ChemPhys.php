@@ -1,4 +1,3 @@
-
 <?php
 session_start(); 
 
@@ -15,9 +14,14 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         "SELECT * FROM usuario WHERE email='$email'"
     );
 
-    if(mysqli_num_rows($verificar) > 0){
-        echo "Este email já foi cadastrado!<br>";
-        echo "Volte a pagina de cadastro";
+    $jaCadastrado = false;
+    foreach($verificar as $linha){
+        $jaCadastrado = true;
+    }
+
+    if($jaCadastrado){
+        echo "<script>alert('Este email já foi cadastrado!');</script>";
+        echo "<script>window.location.href = 'cadastro.html';</script>";
     }else{
         mysqli_query(
             $con,
@@ -25,9 +29,9 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
              VALUES('$nome', '$email', '$word')"
         );
 
-        $_SESSION['usuario_logado'] = $nome; 
+        $_SESSION['usuario'] = $nome; 
 
-        header("Location: Dashboard.php");
+        header("Location:Dashboard.php");
         exit(); 
     }
 }

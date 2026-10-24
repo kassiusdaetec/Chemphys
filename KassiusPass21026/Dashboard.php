@@ -1,15 +1,12 @@
-
-
 <?php
 session_start();
 
-// Só entra quem estiver logado
 if (!isset($_SESSION["usuario"])) {
-    header("Location: loginChemPhys.html");
+    header("Location:cadastro.html");
     exit();
 }
 
-$nome = htmlspecialchars($_SESSION["usuario"], ENT_QUOTES, "UTF-8");
+$nome = $_SESSION["usuario"];
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -17,7 +14,7 @@ $nome = htmlspecialchars($_SESSION["usuario"], ENT_QUOTES, "UTF-8");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="CSS/Content.css">
+    <link rel="stylesheet" href="CSS/Dashboard.css">
 </head>
 <body>
     <div class="body">
@@ -28,10 +25,10 @@ $nome = htmlspecialchars($_SESSION["usuario"], ENT_QUOTES, "UTF-8");
             <div class="selection">
                 <a href="Dashboard.php" class="select">Dashboard</a>
                 <a href="Content.html" class="select">Conteúdo</a>
-                <a href="Calculator.php" class="select">Calculadoras</a>
+                <a href="Calculator.html" class="select">Calculadoras</a>
                 <a href="courses.html" class="select">Trilhas</a>
                 <a href="Historic.html" class="select">Histórico</a>
-                <a href="Favorites.html" class="select">FAVORITOS</a>
+                <a href="Favorites.html" class="select">Favoritos</a>
                 <a href="ChemPhyslogout.php" id="logout" class="exect">⏻ Sair</a>
             </div>
         </div>

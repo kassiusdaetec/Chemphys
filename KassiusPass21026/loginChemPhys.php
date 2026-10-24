@@ -18,22 +18,22 @@ $sql = "SELECT * FROM usuario
 
 $resultado = mysqli_query($con, $sql);
 
-if (mysqli_num_rows($resultado) > 0) {
-
-    $usuario = mysqli_fetch_assoc($resultado);
-
+$achou = false;
+foreach ($resultado as $usuario) {
     $_SESSION["usuario"] = $usuario["usuario"];
     $_SESSION["email"] = $usuario["email"];
+    $achou = true;
+}
+
+if ($achou) {
 
     header("Location: Dashboard.php");
     exit();
+}
+else {
 
-} else {
-
-    echo "Email ou senha incorretos.";
-    echo "<br>Volte para a página de login";
-
-
+    echo "<script>alert('Email ou senha incorretos.');</script>";
+    echo "<script>window.location.href = 'loginChemPhys.html';</script>";
 }
 
 ?>

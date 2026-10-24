@@ -40,8 +40,8 @@ materia varchar(10)not null,
 foreign key(id_calculadora)references calculadora(id_calculadora)
 );
 
-create table favoritos(
-id_favoritos int not null primary key auto_increment,
+create table Favoritos(
+id_Favoritos int not null primary key auto_increment,
 id_usuario int not null,
 id_conteudo int not null,
 id_calculadora int not null,

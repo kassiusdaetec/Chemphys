@@ -3,24 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="CSS/Dashboard.css">
+    <title>Histórico</title>
+    <link rel="stylesheet" href="/CSS/Content.css">
+    <link rel="stylesheet" href="/CSS/historico.css">
 </head>
 <body>
     <div class="body">
         <div class="menu">
             <h3>Chemphys<hr></h3>
-            <input type="text"  placeholder="🔍︎ Pesquisar">
+            <input type="text" placeholder="🔍︎ Pesquisar">
             <div class="selection">
-                <a href="Dashboard.html" class="select">Dashboard</a>
+                <a href="Dashboard.php" class="select">Dashboard</a>
                 <a href="Content.html" class="select">Conteúdo</a>
                 <a href="Calculator.html" class="select">Calculadoras</a>
                 <a href="courses.html" class="select">Trilhas</a>
                 <a href="Historic.html" class="select">Histórico</a>
-                <a href="Favorites.html" class="select">FAVORITOS</a>
-                <a href="ChemPhyslogout.php" id="logout" class="exect">⏻ Sair</a>
+                <a href="Favorites.html" class="select">Favoritos</a>
             </div>
+            <a href="ChemPhyslogout.php" class="exect">⏻ Sair</a>
+        </div>
+        <div class="content">
+            <h1>Histórico</h1>
+            <button id="btnLimpar" style="display:none">Limpar histórico</button>
+            <div id="listaHistorico" class="cards lista-historico"></div>
         </div>
     </div>
+    <script src="/JS/armazenamento.js"></script>
+    <script src="/JS/historico.js"></script>
 </body>
 </html>

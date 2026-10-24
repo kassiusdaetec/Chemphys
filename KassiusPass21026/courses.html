@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trilhas</title>
+    <link rel="stylesheet" href="/CSS/estilo_trilhas.css">
+</head>
+<body>
+    <div class="body">
+        <div class="menu">
+            <h3>Chemphys<hr></h3>
+            <div class="selection">
+                <a href="Dashboard.php" class="select">Dashboard</a>
+                <a href="Content.html" class="select">Conteúdo</a>
+                <a href="Calculator.html" class="select">Calculadoras</a>
+                <a href="courses.html" class="select">Trilhas</a>
+                <a href="Historic.html" class="select">Histórico</a>
+                <a href="Favorites.html" class="select">Favoritos</a>
+                <a href="ChemPhyslogout.php" class="exect">⏻ Sair</a>
+            </div>
+        </div>
+        <div class="main">
+            <h1>Minhas trilhas de estudo</h1>
+
+            <div id="msg" class="msg" style="display:none"></div>
+
+            <form id="formTrilha" class="nova">
+                <input type="text" id="nomeTrilha" placeholder="Nome da nova trilha" maxlength="100" required>
+                <button type="submit">Criar trilha</button>
+            </form>
+            <hr>
+
+            <h2>Minhas trilhas</h2>
+            <div id="listaTrilhas"></div>
+        </div>
+    </div>
+    <script src="/JS/armazenamento.js"></script>
+    <script src="/JS/trilhas.js"></script>
+</body>
+</html>

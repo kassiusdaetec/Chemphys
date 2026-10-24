@@ -33,9 +33,9 @@ body {
 
 .menu {
     width: 200px;
-    margin: 20px;
+    margin: 8px;
     flex-shrink: 0;
-    height: 100vh;
+    height: 98vh;
     position: sticky;
     top: 0;
     background-color: var(--menu-fundo);
@@ -45,31 +45,14 @@ body {
 }
 
 .menu h3 {
+    margin-top: 19px;
     padding: 10px;
     color: white;
 }
 
 .menu hr {
     margin-top: 10px;
-    border: none;
-    border-top: 1px solid var(--menu-borda);
-}
-
-.menu input {
-    background-color: var(--menu-fundo);
-    padding: 10px;
-    border: var(--menu-borda) solid 2px;
-    border-radius: 3px;
-    margin: 0 10px 10px;
-    width: calc(100% - 20px);
-    color: gray;
-    font: inherit;
-    font-size: 14px;
-}
-
-.menu input:focus {
-    outline: none;
-    border-color: white;
+    margin-bottom: 26px;
 }
 
 .selection {
@@ -83,7 +66,7 @@ body {
     padding: 10px;
     margin: 5px;
     color: white;
-    font-size: 14px;
+    font-size: auto;
 }
 
 .select:hover {
@@ -93,18 +76,14 @@ body {
     background-color: var(--menu-hover);
 }
 
-.select.ativo {
-    border-radius: 5px;
-    background-color: var(--menu-hover);
-}
-
 .exect {
     text-decoration: none;
     margin: 10px;
-    margin-top: auto;
+    margin-top: 100%;
     padding: 10px;
+    margin-bottom: 30px;
     color: white;
-    font-size: 14px;
+    font-size: 16px;
     border-radius: 5px;
     background-color: var(--menu-hover);
     border: var(--menu-borda) solid 2px;
@@ -123,6 +102,8 @@ body {
     display: flex;
     flex-direction: column;
     gap: 24px;
+    margin-top: 27px;
+    margin-left: -30px;
 }
 
 .cabecalho {
@@ -132,10 +113,7 @@ body {
     gap: 20px;
 }
 
-.cabecalho h1 {
-    font-size: clamp(28px, 3vw, 42px);
-    margin-bottom: 8px;
-}
+
 
 
 .grade-calculadoras {
