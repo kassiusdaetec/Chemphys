@@ -113,8 +113,9 @@ h3{
 }
 
 .carrossel img{
-    width: 1100px;
-    height: 500px;
+    border: 10px solid white;
+    width: 1110px;
+    height: 510px;
     animation: carrossel 24s infinite ease-in-out;
 }
 
