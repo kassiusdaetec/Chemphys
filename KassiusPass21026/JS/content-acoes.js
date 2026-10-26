@@ -1,3 +1,4 @@
+
 (function () {
     function limpar(texto) {
         return (texto || "").replace(/\s+/g, " ").trim();
@@ -16,7 +17,7 @@
         return partes.join(" > ");
     }
 
-        function lerCard(card) {
+    function lerCard(card) {
         const link = card.querySelector("a");
         const img = card.querySelector("img");
         const p = card.querySelector("p");
@@ -27,6 +28,7 @@
             caminho: caminhoDoCard(card)
         };
     }
+
     const idTrilha = Number(new URLSearchParams(window.location.search).get("trilha"));
     const trilha = idTrilha
         ? lerTrilhas().find(function (t) { return t.id === idTrilha; })
@@ -64,6 +66,30 @@
                 card.style.opacity = "0.5";
                 card.title = "Já está na trilha";
             }
+        });
+    }
+
+    if (!trilha) {
+        document.querySelectorAll(".card").forEach(function (card) {
+            if (!card.querySelector("a")) return;
+
+            const botao = document.createElement("button");
+            botao.type = "button";
+            botao.style.cssText = ESTILO_BOTAO_FAVORITO;
+            aparenciaBotaoFavorito(botao, ehFavorito(lerCard(card).href));
+
+            botao.addEventListener("click", function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                try {
+                    aparenciaBotaoFavorito(botao, alternarFavorito(lerCard(card)));
+                } catch (erro) {
+                    alert("Não foi possível salvar o favorito. O navegador pode estar bloqueando o armazenamento do site.");
+                }
+            });
+
+            card.style.position = "relative"; 
+            card.appendChild(botao);
         });
     }
 

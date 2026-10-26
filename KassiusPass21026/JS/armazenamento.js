@@ -1,6 +1,8 @@
 const CHAVE_TRILHAS = "chemphys_trilhas";
 const CHAVE_HISTORICO = "chemphys_historico";
+const CHAVE_FAVORITOS = "chemphys_favoritos";
 const LIMITE_HISTORICO = 100;
+
 
 function lerTrilhas() {
     try {
@@ -64,7 +66,6 @@ function removerConteudo(idTrilha, href) {
     }
 }
 
-
 function lerHistorico() {
     try {
         const dados = JSON.parse(localStorage.getItem(CHAVE_HISTORICO));
@@ -89,4 +90,53 @@ function registrarHistorico(conteudo) {
 
 function limparHistorico() {
     localStorage.removeItem(CHAVE_HISTORICO);
+}
+
+
+function lerFavoritos() {
+    try {
+        const dados = JSON.parse(localStorage.getItem(CHAVE_FAVORITOS));
+        return Array.isArray(dados) ? dados : [];
+    } catch (e) {
+        return [];
+    }
+}
+
+function ehFavorito(href) {
+    return lerFavoritos().some(function (f) { return f && f.href === href; });
+}
+
+function alternarFavorito(conteudo) {
+    const favoritos = lerFavoritos();
+    const existe = favoritos.some(function (f) { return f && f.href === conteudo.href; });
+    let novos;
+    if (existe) {
+        novos = favoritos.filter(function (f) { return !(f && f.href === conteudo.href); });
+    } else {
+        novos = [{
+            href: conteudo.href,
+            titulo: conteudo.titulo,
+            imagem: conteudo.imagem,
+            caminho: conteudo.caminho,
+            data: new Date().toISOString()
+        }].concat(favoritos);
+    }
+    localStorage.setItem(CHAVE_FAVORITOS, JSON.stringify(novos));
+    return !existe;
+}
+
+function removerFavorito(href) {
+    const novos = lerFavoritos().filter(function (f) { return !(f && f.href === href); });
+    localStorage.setItem(CHAVE_FAVORITOS, JSON.stringify(novos));
+}
+
+const ESTILO_BOTAO_FAVORITO =
+    "position:absolute;top:8px;right:8px;width:32px;height:32px;padding:0;border:none;" +
+    "border-radius:50%;background:rgba(255,255,255,0.92);box-shadow:0 1px 4px rgba(0,0,0,0.3);" +
+    "font-size:20px;line-height:32px;cursor:pointer;z-index:2;";
+
+function aparenciaBotaoFavorito(botao, ativo) {
+    botao.textContent = ativo ? "★" : "☆";
+    botao.style.color = ativo ? "#f5b301" : "#555";
+    botao.title = ativo ? "Remover dos favoritos" : "Adicionar aos favoritos";
 }

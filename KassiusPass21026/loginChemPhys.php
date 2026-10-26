@@ -27,7 +27,7 @@ foreach ($resultado as $usuario) {
 
 if ($achou) {
 
-    header("Location: Dashboard.php");
+    header("Location:Dashboard.php");
     exit();
 }
 else {

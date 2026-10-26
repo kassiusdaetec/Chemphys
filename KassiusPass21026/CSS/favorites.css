@@ -1,0 +1,31 @@
+
+.exect {
+    text-decoration: none;
+}
+
+.content h1 {
+    margin: 20px 20px 10px;
+}
+
+.vazio {
+    margin: 20px;
+    color: #777;
+    font-style: italic;
+}
+
+.lista-favoritos {
+    align-items: flex-start;
+}
+
+.item-fav {
+    display: flex;
+    flex-direction: column;    
+}
+
+.info-fav {
+    display: block;
+    max-width: 200px;
+    margin: 0 20px 4px;
+    font-size: 12px;
+    color: #6c7b88;
+}

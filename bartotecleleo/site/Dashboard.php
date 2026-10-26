@@ -16,7 +16,7 @@
             <p>Bem vindo</p>"?>
             <input type="text"  placeholder="🔍︎ Pesquisar">
             <div class="selection">
-                <a href="Dashboard.html" class="select">Dashboard</a>
+                <a href="Dashboard.php" class="select">Dashboard</a>
                 <a href="Content.html" class="select">Conteúdo</a>
                 <a href="Calculator.html" class="select">Calculadoras</a>
                 <a href="courses.html" class="select">Trilhas</a>

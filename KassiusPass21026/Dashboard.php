@@ -21,7 +21,6 @@ $nome = $_SESSION["usuario"];
         <div class="menu">
             <h3>Chemphys<hr></h3>
             <p class="boas-vindas">Bem-vindo(a), <b><?= $nome ?></b>!</p>
-            <input type="text"  placeholder="🔍︎ Pesquisar">
             <div class="selection">
                 <a href="Dashboard.php" class="select">Dashboard</a>
                 <a href="Content.html" class="select">Conteúdo</a>
