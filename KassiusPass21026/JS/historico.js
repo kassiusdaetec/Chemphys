@@ -122,3 +122,7 @@ btnLimpar.addEventListener("click", function () {
 });
 
 mostrarHistorico();
+console.log(localStorage);
+const chaves = Object.keys(localStorage);
+console.log(chaves); 
+/*abrir console e copiar chave(localStorage.removeItem('chave');)*/

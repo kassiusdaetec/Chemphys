@@ -1,0 +1,38 @@
+.seletor-composto {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.seletor-composto-titulo {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.seletor-composto select {
+    width: 100%;
+    padding: 10px 12px;
+    font: inherit;
+    color: #10132b;
+    background: #ffffff;
+    border: 1px solid #d5d9e6;
+    border-radius: 8px;
+}
+
+.seletor-composto select:focus {
+    outline: none;
+    border-color: #0663ce;
+    box-shadow: 0 0 0 3px rgba(6, 99, 206, 0.2);
+}
+
+.seletor-composto select:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+.seletor-composto-aviso {
+    min-height: 1em;
+    font-size: 0.85rem;
+    opacity: 0.8;
+}

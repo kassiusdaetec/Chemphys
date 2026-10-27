@@ -107,13 +107,26 @@ h3{
 .nova button {
     padding: 6px 10px;
 }
+button{
+    background: linear-gradient(to right,#28285e, #0663ce);
+    border: 0.5px solid black;
+    border-radius: 5px;
+}
+input{
+    padding: 10px;
+    border: gray solid 2px;
+    border-radius: 3px;
+    margin: 4px;
+    color: #00021a;
+}
 
 .trilha {
     background: #fff;
+    border: 0.1px solid #00021a;
     border-radius: 10px;
     padding: 16px;
     margin-bottom: 16px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, .12);
+    box-shadow: #00021a 3px 3px 5px;
 }
 
 .trilha ul {

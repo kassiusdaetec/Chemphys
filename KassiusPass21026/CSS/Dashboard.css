@@ -200,6 +200,22 @@ h3{
         
     }
 }
+.calendar .head th.day.hoje {
+  font-family: sans-serif;
+    text-shadow: 
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 20px #00B8D4,
+    0 0 40px #00B8D4,
+    0 0 80px #00B8D4;
+
+  border: 2px solid #00B8D4;
+  border-radius: 8px;
+  box-shadow: 
+    0 0 10px #00B8D4,
+    inset 0 0 5px #00B8D4; /* Brilho interno opcional */
+  padding: 5px; 
+}
 
 @media (min-width:700px )and (max-width:870px){
 input{

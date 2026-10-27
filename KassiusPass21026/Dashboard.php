@@ -1,11 +1,9 @@
 <?php
 session_start();
-
 if (!isset($_SESSION["usuario"])) {
     header("Location:cadastro.html");
     exit();
 }
-
 $nome = $_SESSION["usuario"];
 ?>
 <!DOCTYPE html>
@@ -101,6 +99,7 @@ $nome = $_SESSION["usuario"];
             </div>
         </div>
     </div>
+<script src="/JS/dashboard.js"></script>
 </body>
 </html>
 <?php

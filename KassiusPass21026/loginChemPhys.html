@@ -7,20 +7,50 @@
     <link rel="stylesheet" href="/CSS/login.css">
 </head>
 <body>
-    <center>
-       
-        <form action="loginChemPhys.php" method="POST">
-             <h1>Login</h1>
-            <div class="pg">
-           <b>E-mail:</b> <input type="email" name="email" id="email" maxlength="200">
-           <b>Senha:</b> <input type="password"  name="senha" id="senha" maxlength="14" minlength="6">
-           <input class="env" type="submit" value="Logar">
-            <a href="Cadastro.html" id="cadastro" class="criar">Criar uma conta</a>
+    <main class="auth">
+        <aside class="marca">
+            <span class="marca-nome">ChemPhys</span>
 
+            <svg class="orbitas" viewBox="-100 -100 200 200" fill="none" aria-hidden="true">
+                <g stroke="#0663ce" stroke-width="0.6" opacity="0.55">
+                    <ellipse rx="90" ry="34"/>
+                    <ellipse rx="90" ry="34" transform="rotate(60)"/>
+                    <ellipse rx="90" ry="34" transform="rotate(120)"/>
+                </g>
+                <circle r="9" fill="#0663ce"/>
+                <g fill="#7db4f5">
+                    <circle cx="68.9" cy="21.9" r="3.2"/>
+                    <g transform="rotate(60)"><circle cx="-84.6" cy="-11.6" r="3.2"/></g>
+                    <g transform="rotate(120)"><circle cx="30.8" cy="-31.9" r="3.2"/></g>
+                </g>
+            </svg>
+
+            <div class="marca-texto">
+                <p class="marca-titulo">Estude Química e Física no seu ritmo.</p>
+                <p>Conteúdos, calculadoras e trilhas de estudo em um só lugar.</p>
             </div>
-        </form>
+        </aside>
 
-
-    </center>
+        <section class="painel">
+            <form action="loginChemPhys.php" method="POST" class="forml">
+                <h1>Login</h1>
+                <p class="sub">Entre para continuar seus estudos.</p>
+                <div class="pg">
+                    <div class="campo">
+                        <label for="email">E-mail</label>
+                        <input type="email" name="email" id="email" maxlength="200">
+                    </div>
+                    <div class="campo">
+                        <label for="senha">Senha</label>
+                        <input type="password" name="senha" id="senha" maxlength="14" minlength="6">
+                    </div>
+                    <input class="env" type="submit" value="Logar">
+                </div>
+                <div class="alt">
+                    <a href="Cadastro.html" id="cadastro" class="secundario">Criar uma conta</a>
+                </div>
+            </form>
+        </section>
+    </main>
 </body>
 </html>
